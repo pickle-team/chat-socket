@@ -1,10 +1,10 @@
-package com.pickle.socket.room;
+package com.pickle.socket.chat;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,13 +13,13 @@ import lombok.ToString;
 @ToString
 @Getter
 @Setter
-public class Room {
+public class Chat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
     private String username;
-
+    private Long room;
     private String content;
+    private LocalDateTime timestamp;
 }

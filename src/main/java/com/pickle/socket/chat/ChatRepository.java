@@ -1,8 +1,8 @@
-package com.pickle.socket.member;
+package com.pickle.socket.chat;
 
-import java.util.Optional;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MemberRepository extends JpaRepository<Member, Long> {
-    Optional<Member> findByUsername(String Username);
+public interface ChatRepository extends JpaRepository<Chat, Long> {
+    List<Chat> findByRoomOrderByTimestampDesc(Long room);
 }
